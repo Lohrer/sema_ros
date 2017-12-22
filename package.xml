@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>sema_ros</name>
+  <version>0.0.1</version>
+  <description>
+    Smart Embedded Management Agent
+  </description>
+
+  <license>Proprietary</license>
+  <author email="mlohrer@dataspeedinc.com">Michael Lohrer</author>
+  <maintainer email="mlohrer@dataspeedinc.com">Michael Lohrer</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>nodelet</depend>
+  <depend>std_msgs</depend>
+
+  <export>
+    <nodelet plugin="${prefix}/nodelets.xml" />
+  </export>
+
+</package>

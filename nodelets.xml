@@ -1,0 +1,9 @@
+<library path="lib/libsema">
+<class name="sema_ros/SemaNodelet"
+       type="sema_ros::SemaNodelet"
+       base_class_type="nodelet::Nodelet">
+  <description>
+    SEMA nodelet
+  </description>
+</class>
+</library>
