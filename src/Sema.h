@@ -1,7 +1,7 @@
 /*********************************************************************
  * Software License Agreement (Proprietary and Confidential)
  *
- *  Copyright (c) 2016-2017, Dataspeed Inc.
+ *  Copyright (c) 2016-2018, Dataspeed Inc.
  *  All rights reserved.
  *
  *  NOTICE:  All information contained herein is, and remains the
@@ -19,7 +19,7 @@
 #include <ros/ros.h>
 
 // ROS messages
-#include <std_msgs/Float32.h>
+#include <sema_ros/Values.h>
 
 namespace sema
 {

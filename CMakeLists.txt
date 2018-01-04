@@ -4,16 +4,27 @@ project(sema_ros)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   nodelet
+  message_generation
   std_msgs
 )
 
-catkin_package(
-  CATKIN_DEPENDS roscpp
-                 nodelet
-                 std_msgs
+add_message_files(FILES
+  Values.msg
+)
+
+generate_messages(DEPENDENCIES
+  std_msgs
+)
+
+catkin_package(CATKIN_DEPENDS
+  roscpp
+  nodelet
+  message_runtime
+  std_msgs
 )
 
 include_directories(
+  include
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -50,4 +61,3 @@ install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_node
 install(FILES nodelets.xml
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
-

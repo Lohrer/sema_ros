@@ -14,7 +14,7 @@
  *********************************************************************/
 
 #include <ros/ros.h>
-#include "SemaDriver.h"
+#include "Sema.h"
 
 int main(int argc, char **argv)
 {
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
   ros::NodeHandle nh_priv("~");
 
   // create SemaDriver class
-  sema_driver::SemaDriver n(nh, nh_priv);
+  sema::Sema n(nh, nh_priv);
 
   // handle callbacks until shut down
   ros::spin();
