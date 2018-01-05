@@ -40,6 +40,7 @@ add_library(${PROJECT_NAME}
   src/Sema.cpp
   src/Sema.h
 )
+add_dependencies(${PROJECT_NAME} ${PROJECT_NAME}_generate_messages_cpp)
 target_link_libraries(${PROJECT_NAME}
   ${catkin_LIBRARIES}
   libeapi
@@ -48,6 +49,7 @@ target_link_libraries(${PROJECT_NAME}
 add_executable(${PROJECT_NAME}_node
   src/node.cpp
 )
+add_dependencies(${PROJECT_NAME}_node ${PROJECT_NAME}_generate_messages_cpp)
 target_link_libraries(${PROJECT_NAME}_node
   ${catkin_LIBRARIES}
   ${PROJECT_NAME}
@@ -55,9 +57,9 @@ target_link_libraries(${PROJECT_NAME}_node
 )
 
 install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_node
-        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 )
 install(FILES nodelets.xml
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
